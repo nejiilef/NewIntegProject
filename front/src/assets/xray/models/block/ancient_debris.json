@@ -1,0 +1,9 @@
+{
+ "credit": "Made by AlleCraft",
+ "parent": "xray:block/ore_pillar",
+    "textures": {
+        "side": "block/ancient_debris_side",
+	    "top": "block/ancient_debris_top",
+	    "bottom": "block/ancient_debris_top"
+    }
+}

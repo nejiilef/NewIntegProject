@@ -1,0 +1,281 @@
+
+<div class="container-fluid">
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-flex align-items-center justify-content-between">
+                <h4 class="mb-0 font-size-18">Dashboard</h4>
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <ng-container>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a>
+                            </li>
+                            <li class="breadcrumb-item active">Dashboard
+                            </li>
+                        </ng-container>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+
+    <div class="row">
+        <div class="col-xl-4">
+            <div class="card overflow-hidden">
+                <div class="bg-primary-subtle">
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="text-primary p-3">
+                                <h5 class="text-primary">Welcome Back !</h5>
+                                <p>Skote Dashboard</p>
+                            </div>
+                        </div>
+                        <div class="col-5 align-self-end">
+                            <img src="assets/images/profile-img.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="avatar-md profile-user-wid mb-4">
+                                <img src="assets/images/users/avatar-1.jpg" alt="" class="img-thumbnail rounded-circle">
+                            </div>
+                            <h5 class="font-size-15 text-truncate">Henry Price</h5>
+                            <p class="text-muted mb-0 text-truncate">UI/UX Designer</p>
+                        </div>
+
+                        <div class="col-sm-8">
+                            <div class="pt-4">
+
+                                
+                                <div class="mt-4">
+                                    <a href="" class="btn btn-primary btn-sm">View Profile <i class="mdi mdi-arrow-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title mb-4">Inscriptions</h4>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p class="text-muted">This year</p>
+                            <h3>21</h3>
+                            <p class="text-muted"><span class="text-success me-2"> 12% <i class="mdi mdi-arrow-up"></i>
+                                </span> From
+                                previous period</p>
+
+                            <div class="mt-4">
+                                <a href="" class="btn btn-primary btn-sm">View More <i class="mdi mdi-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+
+                            <apx-chart dir="ltr" class="apex-charts" [series]="monthlyEarningChart.series" [chart]="monthlyEarningChart.chart" [legend]="monthlyEarningChart.legend" [colors]="monthlyEarningChart.colors" [labels]="monthlyEarningChart.labels" [stroke]="monthlyEarningChart.stroke" [plotOptions]="monthlyEarningChart.plotOptions">
+                            </apx-chart>
+                        </div>
+                    </div>
+                    <p class="text-muted mb-0">We craft digital, graphic and dimensional thinking.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8">
+            <div class="row">
+                <div *ngFor="let stat of statData" class="col-md-6">
+                    <app-stat [title]="stat.title" [value]="stat.value" [icon]="stat.icon"></app-stat>
+                       </div>
+            </div>
+            <!-- end row -->
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-sm-flex flex-wrap">
+                        <div>
+                        <h4 class="card-title mb-4">Inscriptions</h4>
+                        </div>
+                        
+                        <div class="ms-auto">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="javascript: void(0);" [ngClass]="{'active': isActive === 'week'}" (click)="weeklyreport()">Week</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="javascript: void(0);" (click)="monthlyreport()" [ngClass]="{'active': isActive === 'month'}">Month</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="javascript: void(0);" (click)="yearlyreport()" [ngClass]="{'active': isActive === 'year'}">Year</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <apx-chart dir="ltr" class="apex-charts" [chart]="emailSentBarChart.chart" [series]="emailSentBarChart.series" [legend]="emailSentBarChart.legend" [colors]="emailSentBarChart.colors" [fill]="emailSentBarChart.fill" [dataLabels]="emailSentBarChart.dataLabels" [xaxis]="emailSentBarChart.xaxis" [plotOptions]="emailSentBarChart.plotOptions">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+
+    <div class="row">
+        <h4 class="card-title mb-4">List Events</h4>
+        <div class=" text-md-right mb-4">
+            <button type="button" class="btn btn-secondary btn-rounded" (click)="content.show()">add</button>
+        </div>                   
+        <div class="col-xl-4" *ngFor="let e of events">
+            <div class="card">
+                
+                <div class="card-body">
+                    <button type="button" class="btn btn-danger btn-rounded mdi mdi mdi-square-edit-outline" (click)="content2.show()" (click)="OnSubmitUpdate(e.id)"></button>
+     
+                    <button type="button" class="btn btn-primary btn-rounded mdi mdi-delete-empty" (click)="deleteEvent(e.id)"></button>
+     
+                    <div class="text-center" >
+                        
+                        <div class="avatar-sm mx-auto mb-4">
+                            <span class="avatar-title rounded-circle bg-primary-subtle font-size-24">
+                                <i class="mdi mdi-calendar-multiple"></i>
+                            </span>
+                        </div>
+                        <p class="font-16 text-muted mb-2"></p>
+                        <h5><a href="javascript: void(0);" class="text-dark">  {{e.libelle}}<span class="text-muted font-16">
+                                     </span> </a></h5>
+                        <p class="text-muted">{{e.description}}</p>
+                          </div>
+                    
+
+                </div>
+            </div>
+
+
+            <div bsModal #content="bs-modal" class="modal fade" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title mt-0">Add Event</h5>
+                      <button type="button" class="btn-close" aria-hidden="true" (click)="content.hide()"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-lg-13">
+                            <div class="card">
+                                <div class="card-body">
+                                    <form #f="ngForm" (submit)="onSubmit(f)">
+                                        <div class="mb-3">
+                                            <label for="formrow-firstname-input">Libelle</label>
+                                            <input id="lib" class="form-control" type="text" placeholder="Libelle : " required name="Libelle" ngModel>
+                                          </div>
+                
+                                          <div class="mb-3">
+                                            <label for="formrow-firstname-input">description</label>
+                                            <input id="desc" class="form-control" type="text" placeholder="description : " required name="description" ngModel>
+                                       </div>
+                                        <div>
+                                            <button type="submit" class="btn btn-primary w-md" >Add</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+        
+        </div>
+       
+        </div>
+</div>
+</div>
+
+
+    <!-- container-fluid -->
+<!--
+<div bsModal #center="bs-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+                <button type="button" class="btn-close" aria-label="Close" (click)="center.hide()"> </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center mb-4">
+                    <div class="avatar-md mx-auto mb-4">
+                        <div class="avatar-title bg-light rounded-circle text-primary h1">
+                            <i class="mdi mdi-email-open"></i>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-xl-10">
+                            <h4 class="text-primary">Subscribe !</h4>
+                            <p class="text-muted font-size-14 mb-4">Subscribe our newletter and get notification to stay
+                                update.
+                            </p>
+
+                            <div class="input-group bg-light rounded">
+                                <input type="email" class="form-control bg-transparent border-0" placeholder="Enter Email address" aria-label="Recipient's username" aria-describedby="button-addon2">
+
+                                <button class="btn btn-primary" type="button" id="button-addon2">
+                                    <i class="bx bxs-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                
+                <h4 class="card-title mb-4">List des reservations des salles</h4>
+   
+                <app-transaction ></app-transaction>
+                <!-- end table -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div >
+    <div bsModal #content2="bs-modal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title mt-0">Edit Event</h5>
+              <button type="button" class="btn-close" aria-hidden="true" (click)="content2.hide()"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-lg-13">
+                    <div class="card">
+                        <div class="card-body">
+                            <form #f="ngForm" [formGroup]="updateEventForm">
+                                <div class="mb-3">
+                                    <label for="formrow-firstname-input">Libelle</label>
+                                    <input id="lib" class="form-control" type="text" placeholder="Libelle : " required name="Libelle" formControlName="libelle">
+                                  </div>
+        
+                                  <div class="mb-3">
+                                    <label for="formrow-firstname-input">description</label>
+                                    <input id="desc" class="form-control" type="text" placeholder="description : " required name="description" formControlName="description">
+                               </div>
+                                <div>
+                                    <button type="submit" class="btn btn-primary w-md" (click)="updateEvent()" (click)="content2.hide()">Edit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</div>

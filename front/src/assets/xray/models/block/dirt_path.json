@@ -1,0 +1,10 @@
+{ 
+  "credit": "Made by AlleCraft",
+  "parent": "xray:block/xray_farmland",
+    "textures": {
+        "particle": "minecraft:block/dirt_path_side",
+        "top": "minecraft:block/dirt_path_top",
+        "side": "minecraft:block/dirt_path_side",
+        "bottom": "minecraft:block/dirt"
+    }
+}

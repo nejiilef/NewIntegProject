@@ -1,0 +1,9 @@
+{
+  "credit": "Made by AlleCraft",
+  "parent": "xray:block/xray_pillar",
+  "textures": {
+    "top": "minecraft:block/basalt_top",
+    "bottom": "minecraft:block/basalt_top",
+    "side": "minecraft:block/basalt_side"
+  }
+}

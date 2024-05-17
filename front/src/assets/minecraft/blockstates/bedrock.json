@@ -1,0 +1,21 @@
+{
+  "credit": "Made by AlleCraft",
+  "variants": {
+    "": [
+      {
+        "model": "xray:block/bedrock"
+      },
+      {
+        "model": "xray:block/bedrock_mirrored"
+      },
+      {
+        "model": "xray:block/bedrock",
+        "y": 180
+      },
+      {
+        "model": "xray:block/bedrock_mirrored",
+        "y": 180
+      }
+    ]
+  }
+}

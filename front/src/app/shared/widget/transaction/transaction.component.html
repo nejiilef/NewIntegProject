@@ -1,0 +1,182 @@
+<div class="table-responsive mb-0">
+  <table class="table table-centered table-nowrap">
+    <thead class="table-light">
+      <tr>
+        <th style="width: 20px;">
+          <div class="form-check font-size-16 align-middle">
+            <input class="form-check-input" type="checkbox" id="transactionCheck01">
+            <label class="form-check-label" for="transactionCheck01"></label>
+          </div>
+        </th>
+        <th class="align-middle">ID</th>
+        <th class="align-middle">Jour</th>
+        <th class="align-middle">Heure Debut</th>
+        <th class="align-middle">Heure Fin</th>
+        <th class="align-middle">Etat</th>
+        <th class="align-middle" colspan="2">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of reservation">
+        <td>
+          <div class="form-check font-size-16">
+            <input class="form-check-input" type="checkbox" id="transactionCheck{{data.index}}">
+            <label class="form-check-label" for="transactionCheck{{data.index}}"></label>
+          </div>
+        </td>
+        <td>
+          <a href="javascript: void(0);" class="text-body fw-bold">{{data.id}}</a>
+        </td>
+        <td>{{data.jour}}</td>
+        <td>{{data.heureDebut}}</td>
+        <td>{{data.heureFin}}</td>
+        <td>{{data.etat.libelle}}</td>
+       
+        <td>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary btn-sm btn-rounded" (click)="content.show()">Modifier</button>
+        </td>
+        <td>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-danger btn-sm btn-rounded" (click)="deleteReservation(data.id)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div bsModal #content="bs-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title mt-0">Order Details</h5>
+          <button type="button" class="btn-close" aria-hidden="true" (click)="content?.hide()"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-2">
+            Product id:
+            <span class="text-primary">#SK2540</span>
+          </p>
+          <p class="mb-4">
+            Billing Name:
+            <span class="text-primary">Neal Matthews</span>
+          </p>
+          <div class="table-responsive">
+            <table class="table table-centered table-nowrap">
+              <thead>
+                <tr>
+                  <th scope="col">Product</th>
+                  <th scope="col">Product Name</th>
+                  <th scope="col">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <div>
+                      <img src="assets/images/product/img-7.png" alt class="avatar-sm" />
+                    </div>
+                  </th>
+                  <td>
+                    <div>
+                      <h5 class="text-truncate font-size-14">Wireless Headphone (Black)</h5>
+                      <p class="text-muted mb-0">$ 225 x 1</p>
+                    </div>
+                  </td>
+                  <td>$ 255</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div>
+                      <img src="assets/images/product/img-4.png" alt class="avatar-sm" />
+                    </div>
+                  </th>
+                  <td>
+                    <div>
+                      <h5 class="text-truncate font-size-14">Phone patterned cases</h5>
+                      <p class="text-muted mb-0">$ 145 x 1</p>
+                    </div>
+                  </td>
+                  <td>$ 145</td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <h6 class="m-0">Sub Total:</h6>
+                  </td>
+                  <td>$ 400</td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <h6 class="m-0">Shipping:</h6>
+                  </td>
+                  <td>Free</td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <h6 class="m-0">Total:</h6>
+                  </td>
+                  <td>$ 400</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" (click)="content.hide()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-success btn-sm btn-rounded" [routerLink]="['/dash','calendar']">Ajouter</button>
+<div bsModal #content2="bs-modal" class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mt-0">Reserver une salle</h5>
+        <button type="button" class="btn-close" aria-hidden="true" (click)="content2.hide()"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-13">
+              <div class="card">
+                  <div class="card-body">
+                      <form #f="ngForm" (submit)="validateTimes(f)">
+                          <div class="mb-3">
+                              <label for="formrow-firstname-input">Jour</label>
+                              <input id="Jour" type="Date" placeholder="Jour : " required name="jour" ngModel>
+                            </div>
+  
+                          <div class="row">
+  
+                              <div class="col-md-6">
+                                  <div class="mb-3">
+                                      <label for="formrow-email-input">Heure Debut</label>
+                                      <input id="HeureDebut" type="Time" [value]="time1" (ngModelChange)="updateTime1($event)" placeholder="Heure Debut: " required name="heureDebut" ngModel>
+                                    </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="mb-3">
+                                      <label for="formrow-password-input">Heure Fin</label>
+                                      <input id="HeureFin" type="Time" [value]="time2" (ngModelChange)="updateTime2($event)" placeholder="HeureFin : " required name="heureFin" ngModel>
+                                    </div>
+                              </div>
+                          </div>
+                                  <div class="mb-3">
+                                      <label for="formrow-inputState">Salle</label>
+                                      <select id="salle"   name="salle" [(ngModel)]="selectedSalle" class="form-select form-select-sm" >
+                                        <option value="" disabled selected>Choisissez l'arrondissement</option>
+                                        <option *ngFor="let s of salle" [ngValue]="s">{{s.libelle}}</option>
+                            
+                                    </select>
+                                  </div>       
+                          <div>
+                              <button type="submit" class="btn btn-primary w-md" (click)="content.hide()">Reserver</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+    </div>
+  </div>
+</div>
+<!-- end table -->

@@ -1,0 +1,22 @@
+{
+  "credit": "Made by AlleCraft",
+  "variants": {
+    "": [
+      {
+        "model": "xray:block/dirt"
+      },
+      {
+        "model": "xray:block/dirt",
+        "y": 90
+      },
+      {
+        "model": "xray:block/dirt",
+        "y": 180
+      },
+      {
+        "model": "xray:block/dirt",
+        "y": 270
+      }
+    ]
+  }
+}

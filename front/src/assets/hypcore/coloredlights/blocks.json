@@ -1,0 +1,159 @@
+{
+    "enabled": true,
+    "lights": [
+      {
+        "name": "minecraft:spawner",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "radius": 15,
+        "state": {
+          "property": "",
+          "value": ""
+        }
+      },
+      {
+        "name": "minecraft:trapped_chest",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "radius": 3,
+        "state": {
+          "property": "",
+          "value": ""
+        }
+      },
+      {
+        "name": "minecraft:chest",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "radius": 3,
+        "state": {
+          "property": "",
+          "value": ""
+        }
+      },
+      {
+        "name": "minecraft:bone_block",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "radius": 3,
+        "state": {
+          "property": "",
+          "value": ""
+        }
+      },
+      {
+        "name": "minecraft:iron_ore",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "radius": 3,
+        "state": {
+          "property": "",
+          "value": ""
+        }
+      },
+      {
+        "name": "minecraft:gold_ore",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "radius": 3,
+        "state": {
+          "property": "",
+          "value": ""
+        }
+      },
+      {
+        "name": "minecraft:coal_ore",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "radius": 3,
+        "state": {
+          "property": "",
+          "value": ""
+        }
+      },
+      {
+        "name": "minecraft:lapis_ore",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "radius": 3,
+        "state": {
+          "property": "",
+          "value": ""
+        }
+      },
+      {
+        "name": "minecraft:diamond_ore",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "radius": 3,
+        "state": {
+          "property": "",
+          "value": ""
+        }
+      },
+      {
+        "name": "minecraft:redstone_ore",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "radius": 3,
+        "state": {
+          "property": "",
+          "value": ""
+        }
+      },
+      {
+        "name": "minecraft:emerald_ore",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "radius": 3,
+        "state": {
+          "property": "",
+          "value": ""
+        }
+      },
+      {
+        "name": "minecraft:nether_gold_ore",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "radius": 3,
+        "state": {
+          "property": "",
+          "value": ""
+        }
+      },
+      {
+        "name": "minecraft:nether_quartz_ore",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "radius": 3,
+        "state": {
+          "property": "",
+          "value": ""
+        }
+      },
+      {
+        "name": "minecraft:ancient_debris",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "radius": 3,
+        "state": {
+          "property": "",
+          "value": ""
+        }
+      }
+    ]
+}

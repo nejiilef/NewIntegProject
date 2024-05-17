@@ -1,0 +1,331 @@
+
+<div class="container-fluid">
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-flex align-items-center justify-content-between">
+                <h4 class="mb-0 font-size-18">Dashboard</h4>
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <ng-container>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a>
+                            </li>
+                            <li class="breadcrumb-item active">Dashboard
+                            </li>
+                        </ng-container>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+
+    <div class="row">
+           <!-- <div class="card overflow-hidden">
+                <div class="bg-primary-subtle">
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="text-primary p-3">
+                                <h5 class="text-primary">Welcome Back !</h5>
+                                <p>Skote Dashboard</p>
+                            </div>
+                        </div>
+                        <div class="col-5 align-self-end">
+                            <img src="assets/images/profile-img.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="avatar-md profile-user-wid mb-4">
+                                <img src="assets/images/users/avatar-1.jpg" alt="" class="img-thumbnail rounded-circle">
+                            </div>
+                            <h5 class="font-size-15 text-truncate">Henry Price</h5>
+                            <p class="text-muted mb-0 text-truncate">UI/UX Designer</p>
+                        </div>
+
+                        <div class="col-sm-8">
+                            <div class="pt-4">
+
+                                
+                                <div class="mt-4">
+                                    <a href="" class="btn btn-primary btn-sm">View Profile <i class="mdi mdi-arrow-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> --> 
+            
+                    <p class="text-muted mb-0">We craft digital, graphic and dimensional thinking.</p>
+        </div>
+        <div class="col-xl-11">
+            <div class="row">
+                <div *ngFor="let stat of statData" class="col-md-6">
+                    <app-stat [title]="stat.title" [value]="stat.value" [icon]="stat.icon"></app-stat>
+                       </div>
+            </div>
+            <!-- end row -->
+
+           <div class="card">
+                <div class="card-body">
+                    <div class="d-sm-flex flex-wrap">
+                        <div>
+                        <h4 class="card-title mb-4">Inscriptions</h4>
+                        </div>
+                        
+                        <div class="ms-auto">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="javascript: void(0);"  (click)="weeklyreport()" [ngClass]="{'active': isActive === 'week'}">Week</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="javascript: void(0);" (click)="monthlyreport()" [ngClass]="{'active': isActive === 'month'}">Month</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="javascript: void(0);" (click)="yearlyreport()" [ngClass]="{'active': isActive === 'year'}">Year</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <apx-chart dir="ltr" class="apex-charts" [chart]="emailSentBarChart.chart" [series]="emailSentBarChart.series" [legend]="emailSentBarChart.legend" [colors]="emailSentBarChart.colors" [fill]="emailSentBarChart.fill" [dataLabels]="emailSentBarChart.dataLabels" [xaxis]="emailSentBarChart.xaxis" [plotOptions]="emailSentBarChart.plotOptions">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!-- end row -->
+
+    
+
+
+
+    <!-- container-fluid -->
+<div bsModal #center="bs-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+                <button type="button" class="btn-close" aria-label="Close" (click)="center.hide()"> </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center mb-4">
+                    <div class="avatar-md mx-auto mb-4">
+                        <div class="avatar-title bg-light rounded-circle text-primary h1">
+                            <i class="mdi mdi-email-open"></i>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-xl-10">
+                            <h4 class="text-primary">Subscribe !</h4>
+                            <p class="text-muted font-size-14 mb-4">Subscribe our newletter and get notification to stay
+                                update.
+                            </p>
+
+                            <div class="input-group bg-light rounded">
+                                <input type="email" class="form-control bg-transparent border-0" placeholder="Enter Email address" aria-label="Recipient's username" aria-describedby="button-addon2">
+
+                                <button class="btn btn-primary" type="button" id="button-addon2">
+                                    <i class="bx bxs-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                
+                <h4 class="card-title mb-4">List des demandes reservations des salles</h4>
+                <!--table reservation salle-->
+                <div class="table-responsive mb-0">
+                    <table class="table table-centered table-nowrap">
+                      <thead class="table-light">
+                        <tr>
+                          <th style="width: 20px;">
+                            <div class="form-check font-size-16 align-middle">
+                              <input class="form-check-input" type="checkbox" id="transactionCheck01">
+                              <label class="form-check-label" for="transactionCheck01"></label>
+                            </div>
+                          </th>
+                          <th class="align-middle">ID</th>
+                          <th class="align-middle">Jour</th>
+                          <th class="align-middle">Heure Debut</th>
+                          <th class="align-middle">Heure Fin</th>
+                          <th class="align-middle">Etat</th>
+                          <th class="align-middle" colspan="2">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let data of reservation">
+                          <td>
+                            <div class="form-check font-size-16">
+                              <input class="form-check-input" type="checkbox" id="transactionCheck{{data.index}}">
+                              <label class="form-check-label" for="transactionCheck{{data.index}}"></label>
+                            </div>
+                          </td>
+                          <td>
+                            <a href="javascript: void(0);" class="text-body fw-bold">{{data.id}}</a>
+                          </td>
+                          <td>{{data.jour}}</td>
+                          <td>{{data.heureDebut}}</td>
+                          <td>{{data.heureFin}}</td>
+                          <td>{{data.etat.libelle}}</td>
+                         
+                          <td>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary btn-sm btn-rounded" (click)="updatEtatResSalle(data.id,1)">Accepter</button>
+                          </td>
+                          <td>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-danger btn-sm btn-rounded" (click)="updatEtatResSalle(data.id,2)">Refuser</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    </div>
+                    <!--end table reservation salle-->
+                <!--<app-transaction ></app-transaction> -->
+                <!-- end table -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                
+                <h4 class="card-title mb-4">List des materiels</h4>
+                <!--table reservation salle-->
+                <div class="table-responsive mb-0">
+                    <table class="table table-centered table-nowrap">
+                      <thead class="table-light">
+                        <tr>
+                          <th style="width: 20px;">
+                            <div class="form-check font-size-16 align-middle">
+                              <input class="form-check-input" type="checkbox" id="transactionCheck01">
+                              <label class="form-check-label" for="transactionCheck01"></label>
+                            </div>
+                          </th>
+                          <th class="align-middle">ID</th>
+                          <th class="align-middle">Libelle</th>
+                          <th class="align-middle">Quantite</th>
+                          <th class="align-middle" colspan="2">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let data of materials">
+                          <td>
+                            <div class="form-check font-size-16">
+                              <input class="form-check-input" type="checkbox" id="transactionCheck{{data.index}}">
+                              <label class="form-check-label" for="transactionCheck{{data.index}}"></label>
+                            </div>
+                          </td>
+                          <td>
+                            <a href="javascript: void(0);" class="text-body fw-bold">{{data.id}}</a>
+                          </td>
+                          <td>{{data.libelle}}</td>
+                          <td>{{data.quantite}}</td>
+                         
+                          <td>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary btn-sm btn-rounded" (click)="content.show()" (click)="content.show()" (click)="OnSubmitUpdate(data.id)">Modifier</button>
+                          </td>
+                          <td>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-danger btn-sm btn-rounded" (click)="deleteMaterial(data.id)">Supprimer</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    </div>
+                    <!--end table reservation salle-->
+                <!--<app-transaction ></app-transaction> -->
+                <!-- end table -->
+                <button type="button" class="btn btn-success btn-sm btn-rounded" (click)="content2.show()">Ajouter</button>
+
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div>
+    <div bsModal #content="bs-modal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title mt-0">Edit Materiel</h5>
+              <button type="button" class="btn-close" aria-hidden="true" (click)="content.hide()"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-lg-13">
+                    <div class="card">
+                        <div class="card-body">
+                            <form #f="ngForm" [formGroup]="updateMaterielForm">
+                                <div class="mb-3">
+                                    <label for="formrow-firstname-input">Libelle</label>
+                                    <input id="lib" class="form-control" type="text" placeholder="Libelle : " required name="libelle" formControlName="libelle">
+                                  </div>
+        
+                                  <div class="mb-3">
+                                    <label for="formrow-firstname-input">Quantite</label>
+                                    <input id="qte" class="form-control" type="number" placeholder="description : " required name="quantite" formControlName="quantite">
+                               </div>
+                                <div>
+                                    <button type="submit" class="btn btn-primary w-md" (click)="updateMateriel()" (click)="content.hide()">Edit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</div>
+
+<div>
+    <div bsModal #content2="bs-modal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title mt-0">Add Materiel</h5>
+              <button type="button" class="btn-close" aria-hidden="true" (click)="content2.hide()"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-lg-13">
+                    <div class="card">
+                        <div class="card-body">
+                            <form #f="ngForm" (submit)="onSubmit(f)">
+                                <div class="mb-3">
+                                    <label for="formrow-firstname-input">Libelle</label>
+                                    <input id="lib" class="form-control" type="text" placeholder="Libelle : " required name="Libelle" ngModel>
+                                  </div>
+        
+                                  <div class="mb-3">
+                                    <label for="formrow-firstname-input">quantite</label>
+                                    <input id="qte" class="form-control" type="number" required name="quantite" ngModel>
+                               </div>
+                                <div>
+                                    <button type="submit" class="btn btn-primary w-md" >Add</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</div>

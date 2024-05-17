@@ -1,0 +1,63 @@
+{
+  "credit": "Made by AlleCraft",
+  "variants": {
+    "axis=x": [
+      {
+        "model": "xray:block/deepslate",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "xray:block/deepslate",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "xray:block/deepslate",
+        "y": 90,
+        "x": 90
+      },
+      {
+        "model": "xray:block/deepslate",
+        "y": 90,
+        "x": 90
+      }
+    ],
+    "axis=y": [
+      {
+        "model": "xray:block/deepslate"
+      },
+      {
+        "model": "xray:block/deepslate"
+      },
+      {
+        "model": "xray:block/deepslate",
+        "y": 180
+      },
+      {
+        "model": "xray:block/deepslate",
+        "y": 180
+      }
+    ],
+    "axis=z": [
+      {
+        "model": "xray:block/deepslate",
+        "x": 90
+      },
+      {
+        "model": "xray:block/deepslate",
+        "x": 90
+      },
+      {
+        "model": "xray:block/deepslate",
+        "y": 180,
+        "x": 90
+      },
+      {
+        "model": "xray:block/deepslate",
+        "y": 180,
+        "x": 90
+      }
+    ]
+  }
+}

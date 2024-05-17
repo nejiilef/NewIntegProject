@@ -1,0 +1,7 @@
+{
+"__comment": "Copyright 2018 Filmjolk David Grindholmen",
+    "parent": "block/solid_all",
+    "textures": {
+        "all": "block/mob_spawner"
+    }
+}

@@ -1,0 +1,29 @@
+{
+  "credit": "Made by AlleCraft",
+  "variants": {
+    "moisture=0": {
+      "model": "xray:block/farmland"
+    },
+    "moisture=1": {
+      "model": "xray:block/farmland"
+    },
+    "moisture=2": {
+      "model": "xray:block/farmland"
+    },
+    "moisture=3": {
+      "model": "xray:block/farmland"
+    },
+    "moisture=4": {
+      "model": "xray:block/farmland"
+    },
+    "moisture=5": {
+      "model": "xray:block/farmland"
+    },
+    "moisture=6": {
+      "model": "xray:block/farmland"
+    },
+    "moisture=7": {
+      "model": "xray:block/farmland_moist"
+    }
+  }
+}

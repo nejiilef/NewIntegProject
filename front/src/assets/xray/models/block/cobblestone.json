@@ -1,0 +1,6 @@
+{
+  "parent": "xray:block/xray",
+  "textures": {
+    "all": "minecraft:block/cobblestone"
+  }
+}

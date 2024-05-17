@@ -1,0 +1,150 @@
+{
+  "credit": "Made by AlleCraft",
+  "ambientocclusion": false,
+  "parent": "minecraft:block/block",
+  "textures": {
+	"particle": "block/dirt",
+	"bottom": "block/dirt",
+	"top": "block/grass_block_top",
+	"side": "block/grass_block_side",
+	"overlay": "block/grass_block_side_overlay"
+},
+	"elements": [
+		{
+			"from": [0.5, 15.5, 15.5],
+			"to": [15.5, 16, 16],
+			"faces": {
+				"south": {"texture": "#side", "cullface": "south"},
+				"up": {"texture": "#top", "cullface": "up", "tintindex": 0}
+			}
+		},
+		{
+			"from": [0.5, 0, 15.5],
+			"to": [15.5, 0.5, 16],
+			"faces": {
+				"south": {"texture": "#side", "cullface": "south"},
+				"down": {"texture": "#bottom", "cullface": "down"}
+			}
+		},
+		{
+			"from": [0.5, 0, 0],
+			"to": [15.5, 0.5, 0.5],
+			"faces": {
+				"north": {"texture": "#side", "cullface": "north"},
+				"down": {"texture": "#bottom", "cullface": "down"}
+			}
+		},
+		{
+			"from": [0.5, 15.5, 0],
+			"to": [15.5, 16, 0.5],
+			"faces": {
+				"north": {"texture": "#side", "cullface": "north"},
+				"up": {"texture": "#top", "cullface": "up", "tintindex": 0}
+			}
+		},
+		{
+			"from": [0, 15.5, 0.5],
+			"to": [0.5, 16, 15.5],
+			"faces": {
+				"west": {"texture": "#side", "cullface": "west"},
+				"up": {"texture": "#top", "cullface": "up", "tintindex": 0}
+			}
+		},
+		{
+			"from": [0, 0, 0.5],
+			"to": [0.5, 0.5, 15.5],
+			"faces": {
+				"west": {"texture": "#side", "cullface": "west"},
+				"down": {"texture": "#bottom", "cullface": "down"}
+			}
+		},
+		{
+			"from": [15.5, 0, 0.5],
+			"to": [16, 0.5, 15.5],
+			"faces": {
+				"east": {"texture": "#side", "cullface": "east"},
+				"down": {"texture": "#bottom", "cullface": "down"}
+			}
+		},
+		{
+			"from": [15.5, 15.5, 0.5],
+			"to": [16, 16, 15.5],
+			"faces": {
+				"east": {"texture": "#side", "cullface": "east"},
+				"up": {"texture": "#top", "cullface": "up", "tintindex": 0}
+			}
+		},
+		{
+			"from": [15.5, 0, 0],
+			"to": [16, 16, 0.5],
+			"faces": {
+				"north": {"texture": "#side", "cullface": "north"},
+				"east": {"texture": "#side", "cullface": "east"},
+				"up": {"texture": "#top", "cullface": "up", "tintindex": 0},
+				"down": {"texture": "#bottom", "cullface": "down"}
+			}
+		},
+		{
+			"from": [15.5, 0, 15.5],
+			"to": [16, 16, 16],
+			"faces": {
+				"east": {"texture": "#side", "cullface": "east"},
+				"south": {"texture": "#side", "cullface": "south"},
+				"up": {"texture": "#top", "cullface": "up", "tintindex": 0},
+				"down": {"texture": "#bottom", "cullface": "down"}
+			}
+		},
+		{
+			"from": [0, 0, 15.5],
+			"to": [0.5, 16, 16],
+			"faces": {
+				"south": {"texture": "#side", "cullface": "south"},
+				"west": {"texture": "#side", "cullface": "west"},
+				"up": {"texture": "#top", "cullface": "up", "tintindex": 0},
+				"down": {"texture": "#bottom", "cullface": "down"}
+			}
+		},
+		{
+			"from": [0, 0, 0],
+			"to": [0.5, 16, 0.5],
+			"faces": {
+				"north": {"texture": "#side", "cullface": "north"},
+				"west": {"texture": "#side", "cullface": "west"},
+				"up": {"texture": "#top", "cullface": "up", "tintindex": 0},
+				"down": {"texture": "#bottom", "cullface": "down"}
+			}
+		},
+		{
+			"from": [15.5, 0, 0],
+			"to": [16, 16, 0.5],
+			"faces": {
+				"north": {"texture": "#overlay", "cullface": "north", "tintindex": 0},
+				"east": {"texture": "#overlay", "cullface": "east", "tintindex": 0}
+			}
+		},
+		{
+			"from": [15.5, 0, 15.5],
+			"to": [16, 16, 16],
+			"faces": {
+				"east": {"texture": "#overlay", "cullface": "east", "tintindex": 0},
+				"south": {"texture": "#overlay", "cullface": "south", "tintindex": 0}
+			}
+		},
+		{
+			"from": [0, 0, 15.5],
+			"to": [0.5, 16, 16],
+			"faces": {
+				"south": {"texture": "#overlay", "cullface": "south", "tintindex": 0},
+				"west": {"texture": "#overlay", "cullface": "west", "tintindex": 0}
+			}
+		},
+		{
+			"from": [0, 0, 0],
+			"to": [0.5, 16, 0.5],
+			"faces": {
+				"north": {"texture": "#overlay", "cullface": "north", "tintindex": 0},
+				"west": {"texture": "#overlay", "cullface": "west", "tintindex": 0}
+			}
+		}
+	]
+}

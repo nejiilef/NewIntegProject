@@ -1,0 +1,8 @@
+{
+    "credit": "Made by AlleCraft",
+  "parent": "xray:block/ore",
+	"ambientocclusion": false,
+    "textures": {
+        "all": "block/nether_quartz_ore"
+    }
+}

@@ -1,0 +1,9 @@
+{
+ "credit": "Made by AlleCraft",
+ "parent": "xray:block/xray_pillar",
+  "textures": {
+    "top": "minecraft:block/crimson_nylium",
+    "bottom": "minecraft:block/netherrack",
+    "side": "minecraft:block/crimson_nylium_side"
+  }
+}

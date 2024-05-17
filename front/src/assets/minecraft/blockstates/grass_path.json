@@ -1,0 +1,22 @@
+{
+  "credit": "Made by AlleCraft",
+  "variants": {
+    "": [
+      {
+        "model": "xray:block/grass_path"
+      },
+      {
+        "model": "xray:block/grass_path",
+        "y": 90
+      },
+      {
+        "model": "xray:block/grass_path",
+        "y": 180
+      },
+      {
+        "model": "xray:block/grass_path",
+        "y": 270
+      }
+    ]
+  }
+}

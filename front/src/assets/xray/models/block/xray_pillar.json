@@ -1,0 +1,14 @@
+{
+  "credit": "Made by AlleCraft",
+  "parent": "xray:block/template_trasparent",
+	"ambientocclusion": false,
+  "textures": {
+    "particle": "#side",
+    "down":  "#bottom",
+    "up":    "#top",
+    "north": "#side",
+    "south": "#side",
+    "west":  "#side",
+    "east":  "#side"
+  }
+}

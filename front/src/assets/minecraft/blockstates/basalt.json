@@ -1,0 +1,17 @@
+{
+  "credit": "Made by AlleCraft",
+  "variants": {
+    "axis=x": {
+      "model": "xray:block/basalt",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "xray:block/basalt"
+    },
+    "axis=z": {
+      "model": "xray:block/basalt",
+      "x": 90
+    }
+  }
+}
